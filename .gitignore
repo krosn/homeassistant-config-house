@@ -1,15 +1,18 @@
-# Files to never ignore.
-!*.yaml
-!.gitignore
-!*.md
-!configuration.yaml
+# Ignore everything
+*
 
-# Ignore folders.
+# Always ignore these
 .storage
 .cloud
 .google.token
-
-# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+
+# Never ignore these.
+!.gitignore
+!automations.yaml
+!configuration.yaml
+!scenes.yaml
+!scripts.yaml
+!templates.yaml
