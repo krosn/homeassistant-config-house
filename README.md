@@ -3,9 +3,16 @@
 # External Access Setup
 1) Install Duck DNS add-on
   - Configure with domain and token
-2) Install Maria DB add-on
+2) Modify HTTP config
+  - http:
+      use_x_forwarded_for: true
+      trusted_proxies:
+        - 172.30.33.3
+        - 127.0.0.1
+        - ::1
+3) Install Maria DB add-on
   - Configure a password
-3) Install Nginx proxy add-on (the community one, not the official)
+4) Install Nginx proxy add-on (the community one, not the official)
   - Add a new proxy host for the domain mapping to ["http", "homeassistant.local", "8123"]
   - Ensure ports 80, 81, and 443 are all forwarded in the router
   - Test the generated link
